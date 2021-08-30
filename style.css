@@ -1,0 +1,196 @@
+:root{
+    --skin:#fffeec;
+    --green:#aeddcd;
+    --pink:#e4508f;
+    --blue:#556fb5;
+}
+*{
+    margin:0;
+    padding:0;
+}          
+ 
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family:cursive;
+}
+
+#top{
+    display:flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    overflow: hidden;
+    width:100vw;
+}
+#top a{
+    float: left;
+    display: block;
+    color:#f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#top a:hover{
+    background: #ddd;
+    color:black;
+}
+.container{
+    max-width: 100vw;
+    height:100vh;
+    background-color:var(--skin);
+    color:var(--blue);
+    /* padding:30%; */
+    
+}
+img{
+    box-shadow:10px 10px 10px 1px grey;
+    transition: width 0.5s , height 0.5s;
+}
+img:hover{
+    width:275px;
+    height: 375px;
+}
+/* 
+Block 
+*/
+.front{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    align-content: center;
+    
+    font-size: 2rem;
+    font-style: italic;
+}
+.front p{
+    margin-right:10px;
+}
+.bio{
+    box-sizing: border-box;
+    padding:3rem;
+}
+.bio h1{
+    text-align: center;
+    width:12ch;
+    margin:0 auto;
+    border-right:2px solid black;
+    white-space:nowrap;
+    overflow: hidden;
+    animation:slide 4s steps(20) 1s infinite alternate;
+}
+@keyframes slide {
+    from{
+        width:0;
+    }
+    80%{
+        width:12ch;
+    }
+}
+
+.rope{
+    min-height: 50vh;
+    display:flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    justify-content:space-around;
+    align-content: space-around;
+}
+.knot{
+    font-size: 1rem;
+    padding:1rem 1.5rem;
+    margin-bottom:5px;
+    border:1px solid black;
+    border-radius: 25px;
+    background-color: var(--skin);
+    transition: font-size 0.3s;
+    box-shadow: 2px 2px 6px 2px grey;
+}
+.knot a{
+    text-decoration: none;
+}
+.knot:hover{
+    font-size: 1.1rem;
+}
+
+/* 
+                photo conainer
+ */
+.photo-title{
+    padding:10px;
+    text-align: center;
+    text-decoration: underline;
+}
+.photo-cont{
+    padding: 3rem;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+}
+.photo{
+    display: inline-block;
+}
+
+.about{
+    background-color: rgb(37, 26, 26);
+    color:var(--skin);
+    padding:1rem;
+    text-align:center;
+
+}
+.about a{
+    text-decoration: none;
+    color:var(--pink);
+}
+
+/*
+                CSS COMPONENT 
+*/
+.bggreen{
+    background-color: var(--green);
+}
+.arial{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* 
+                for NORMAL DEVICE 
+*/
+@media only screen and (max-width:700px){
+    .front{
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+     
+    }
+    .front p{
+        margin-top: 1.5rem;
+        margin-right: 0;
+    }
+    .knot{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color:var(--pink)
+    }
+}
+
+/*              for SMALL DEVICE */
+@media only screen and (max-width:380px){
+    .container{
+        font-size: 1rem;
+        color:var(--pink)
+
+    }
+    img{
+        width: 250px;
+        height: 350px;
+    }
+    .knot{
+        font-size: 14px;
+        padding:0.75rem 1rem;
+    }
+}
